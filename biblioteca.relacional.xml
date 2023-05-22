@@ -1,0 +1,33 @@
+<Database>
+  <Table name="Livro">
+    <Columns>
+      <Column name="id" primaryKey="true" />
+      <Column name="titulo" />
+      <Column name="autor" />
+      <Column name="editora" />
+      <Column name="ano_publicacao" />
+      <Column name="quantidade_exemplares_disponiveis" />
+    </Columns>
+  </Table>
+  
+  <Table name="Leitor">
+    <Columns>
+      <Column name="id" primaryKey="true" />
+      <Column name="nome" />
+      <Column name="endereco" />
+      <Column name="telefone" />
+      <Column name="data_nascimento" />
+    </Columns>
+  </Table>
+  
+  <Table name="Emprestimo">
+    <Columns>
+      <Column name="id" primaryKey="true" />
+      <Column name="data_retirada" />
+      <Column name="data_devolucao_prevista" />
+      <Column name="status" />
+      <Column name="livro_id" foreignKey="true" references="Livro(id)" />
+      <Column name="leitor_id" foreignKey="true" references="Leitor(id)" />
+    </Columns>
+  </Table>
+</Database>

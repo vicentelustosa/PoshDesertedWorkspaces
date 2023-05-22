@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERD>
+  <Entities>
+    <Entity name="Livro">
+      <Attributes>
+        <Attribute name="id" identifier="true" />
+        <Attribute name="titulo" />
+        <Attribute name="autor" />
+        <Attribute name="editora" />
+        <Attribute name="ano_publicacao" />
+        <Attribute name="quantidade_exemplares_disponiveis" />
+      </Attributes>
+    </Entity>
+    
+    <Entity name="Leitor">
+      <Attributes>
+        <Attribute name="id" identifier="true" />
+        <Attribute name="nome" />
+        <Attribute name="endereco" />
+        <Attribute name="telefone" />
+        <Attribute name="data_nascimento" />
+      </Attributes>
+    </Entity>
+  </Entities>
+  
+  <Relationships>
+    <Relationship>
+      <Attributes>
+        <Attribute name="data_retirada" />
+        <Attribute name="data_devolucao_prevista" />
+        <Attribute name="status" />
+      </Attributes>
+      <Links>
+        <Link minimum="0" maximum="N" entity="Livro" />
+        <Link minimum="0" maximum="N" entity="Leitor" />
+      </Links>
+    </Relationship>
+  </Relationships>
+</ERD>
