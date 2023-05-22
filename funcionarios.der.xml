@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERD>
+  <Entities>
+    <Entity name="Funcionario">
+      <Attributes>
+        <Attribute name="id" identifier="true" />
+        <Attribute name="nome" />
+        <Attribute name="cargo" />
+        <Attribute name="data_admissao" />
+        <Attribute name="salario" />
+      </Attributes>
+    </Entity>
+    
+    <Entity name="Departamento">
+      <Attributes>
+        <Attribute name="id" identifier="true" />
+        <Attribute name="nome" />
+        <Attribute name="descricao" />
+      </Attributes>
+    </Entity>
+  </Entities>
+  
+  <Relationships>
+    <Relationship>
+      <Links>
+        <Link minimum="0" maximum="N" entity="Funcionario" role="Supervisionado" />
+        <Link minimum="0" maximum="1" entity="Funcionario" role="Supervisor" />
+      </Links>
+    </Relationship>
+    
+    <Relationship>
+      <Links>
+        <Link minimum="0" maximum="N" entity="Funcionario" />
+        <Link minimum="0" maximum="1" entity="Departamento" />
+      </Links>
+    </Relationship>
+  </Relationships>
+</ERD>
