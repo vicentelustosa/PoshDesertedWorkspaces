@@ -1,0 +1,23 @@
+<Database>
+  <Tables>
+    <Table name="Funcionario">
+      <Columns>
+        <Column name="id" primaryKey="true" />
+        <Column name="nome" />
+        <Column name="cargo" />
+        <Column name="data_admissao" />
+        <Column name="salario" />
+        <Column name="supervisor_id" foreignKey="true" references="Funcionario(id)" />
+        <Column name="departamento_id" foreignKey="true" references="Departamento(id)" />
+      </Columns>
+    </Table>
+    
+    <Table name="Departamento">
+      <Columns>
+        <Column name="id" primaryKey="true" />
+        <Column name="nome" />
+        <Column name="descricao" />
+      </Columns>
+    </Table>
+  </Tables>
+</Database>

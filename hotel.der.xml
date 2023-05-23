@@ -1,0 +1,60 @@
+<ERD>
+  <Entities>
+    <Entity name="Cliente">
+      <Attributes>
+        <Attribute name="id" identifier="true" />
+        <Attribute name="nome" />
+        <Attribute name="endereco" />
+        <Attribute name="contato" />
+      </Attributes>
+    </Entity>
+    
+    <Entity name="TipoQuarto">
+      <Attributes>
+        <Attribute name="id" identifier="true" />
+        <Attribute name="nome" />
+        <Attribute name="tamanho" />
+        <Attribute name="comodidades" />
+        <Attribute name="tarifa" />
+      </Attributes>
+    </Entity>
+    
+    <Entity name="Quarto">
+      <Attributes>
+        <Attribute name="numero" identifier="true" />
+      </Attributes>
+    </Entity>
+    
+    <Entity name="Reserva">
+      <Attributes>
+        <Attribute name="id" identifier="true" />
+        <Attribute name="data_checkin" />
+        <Attribute name="data_checkout" />
+        <Attribute name="valor_total" />
+      </Attributes>
+    </Entity>
+  </Entities>
+  
+  <Relationships>
+    <Relationship>
+      <Links>
+        <Link minimum="1" maximum="1" entity="Cliente" />
+        <Link minimum="0" maximum="N" entity="Reserva" />
+      </Links>
+    </Relationship>
+    
+    <Relationship>
+      <Links>
+        <Link minimum="1" maximum="1" entity="TipoQuarto" />
+        <Link minimum="0" maximum="N" entity="Quarto" />
+      </Links>
+    </Relationship>
+    
+    <Relationship>
+      <Links>
+        <Link minimum="0" maximum="N" entity="Quarto" />
+        <Link minimum="0" maximum="N" entity="Reserva" />
+      </Links>
+    </Relationship>
+  </Relationships>
+</ERD>

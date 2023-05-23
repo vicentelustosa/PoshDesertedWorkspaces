@@ -1,0 +1,40 @@
+<Database>
+  <Tables>
+    <Table name="Cliente">
+      <Columns>
+        <Column name="id" primaryKey="true" />
+        <Column name="nome" />
+        <Column name="endereco" />
+        <Column name="contato" />
+      </Columns>
+    </Table>
+    
+    <Table name="TipoQuarto">
+      <Columns>
+        <Column name="id" primaryKey="true" />
+        <Column name="nome" />
+        <Column name="tamanho" />
+        <Column name="comodidades" />
+        <Column name="tarifa" />
+      </Columns>
+    </Table>
+    
+    <Table name="Quarto">
+      <Columns>
+        <Column name="numero" primaryKey="true" />
+        <Column name="id_tipo_quarto" foreignKey="true" references="TipoQuarto(id)" />
+      </Columns>
+    </Table>
+    
+    <Table name="Reserva">
+      <Columns>
+        <Column name="id" primaryKey="true" />
+        <Column name="data_checkin" />
+        <Column name="data_checkout" />
+        <Column name="valor_total" />
+        <Column name="id_cliente" foreignKey="true" references="Cliente(id)" />
+        <Column name="numero_quarto" foreignKey="true" references="Quarto(numero)" />
+      </Columns>
+    </Table>
+  </Tables>
+</Database>
