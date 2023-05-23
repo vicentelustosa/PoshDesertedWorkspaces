@@ -52,7 +52,7 @@
     
     <Relationship>
       <Links>
-        <Link minimum="0" maximum="N" entity="Quarto" />
+        <Link minimum="1" maximum="1" entity="Quarto" />
         <Link minimum="0" maximum="N" entity="Reserva" />
       </Links>
     </Relationship>
